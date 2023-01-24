@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "akscluster-bd5d"
+    labels:
+        app: "akscluster-bd5d"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: aks-cluster9af1-akscluster-bd5d.28adbafaf9734f8ab731.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "akscluster-bd5d"
+                servicePort: 80
