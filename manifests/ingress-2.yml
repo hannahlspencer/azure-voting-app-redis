@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "bigbangcluster-c20b"
+    labels:
+        app: "bigbangcluster-c20b"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: bigbangclusterfordeployment-bigbangcluster-c20b.6363f1b3aef6449b9cab.northeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "bigbangcluster-c20b"
+                servicePort: 80
