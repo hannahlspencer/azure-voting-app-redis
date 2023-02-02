@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "bigbangcluster-c20b"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "bigbangcluster-c20b"
+  template:
+    metadata:
+      labels:
+        app: "bigbangcluster-c20b"
+    spec:
+      containers:
+        - name: "bigbangcluster-c20b"
+          image: "bigbangcontainer.azurecr.io/bigbangcluster"
+          ports:
+          - containerPort: 80
